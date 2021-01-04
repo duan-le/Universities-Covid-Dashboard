@@ -9,7 +9,7 @@ results = soup.find_all('div', {'class': 'layout-blocks-ucws-text container-flui
 results = results[2].find_all('div', {'class': 'col-sm-12 one-col'})
 results = results[0].find_all('p')
 
-with open('uofc_covid_cases.csv', 'w') as csv_file:
+with open('uofc_covid_cases.csv', 'w', newline='') as csv_file:
     writer  = csv.writer(csv_file)
     columns = ['Date', 'Location']
     writer.writerow(columns)
