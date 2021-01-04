@@ -16,10 +16,10 @@ with open('mcgill_covid_cases.csv', 'w', newline='') as csv_file:
     i = 0
     for p in results[0].find_all('td'):        
         if i != 2:
-            print(p.get_text().strip())
             row.append(p.get_text().strip())
             i += 1
         else:
+            print(row)
             writer.writerow(row)
             row.clear()
             i = 0
