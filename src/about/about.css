@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+  color: #222;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 20vw;
+    object-fit: cover;
+}
+
+.scrollable{
+    overflow-y: auto;
+    max-height: 200px;
+}
+
+.fa-github {
+    color: #222;
+}
+
+.fa-linkedin {
+    color: #0077B5;
+}
+
+.social a{
+    font-size: 2em;
+}
+
+.github{
+    padding-left: 0.5em;
+}
+
+/* General */
+.padding {
+    padding-bottom: 2rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+.welcome {
+    width: 75%;
+    margin: 0 auto;
+    padding-top: 2rem;
+}
+.welcome hr {
+    border-top: 2px solid #b4b4b4;
+    width: 95%;
+}
+
+.whoweare {
+    width: 75%;
+    margin: 0 auto;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+}
+
+/*---Media Queries --*/
+@media (max-width: 992px) {
+
+}
+@media (max-width: 768px) {
+    .card-img-top {
+        width: 100%;
+        height: 40vw;
+        object-fit: cover;
+    }
+}
+@media (max-width: 576px) {
+    .card-img-top {
+        width: 100%;
+        height: 50vw;
+        object-fit: cover;
+    }
+}
+
+/*--- Bootstrap Padding Fix --*/
+[class*="col-"] {
+    padding: 1rem;
+}
