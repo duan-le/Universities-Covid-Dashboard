@@ -77,13 +77,19 @@ footer {
 
 /*---Media Queries --*/
 @media (max-width: 992px) {
-
+  .carousel-caption { 
+    font-size: 0.9rem;
   }
+}
 @media (max-width: 768px) {
-  
+  .carousel-caption { 
+    font-size: 0.70rem;
+  }
 }
 @media (max-width: 576px) {
-  
+  .carousel-caption { 
+    font-size: 0.5rem;
+  }
 }
 
 /*--- Fixed Background Image --*/
