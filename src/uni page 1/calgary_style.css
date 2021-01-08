@@ -54,9 +54,23 @@ html, body {
     padding-bottom: 3rem;
 }
 
+.card {
+    margin: auto;
+    max-width: 80em;
+}
+
 .map-size {
     margin: auto;
     max-width: 75em;
+    padding-bottom: 3rem;
+}
+
+.info-content {
+    max-width: 90%;
+    border: 0.15em solid black;
+    border-radius: 1em;
+    padding: 100px;
+    margin: 5em auto;
 }
 
 /* Footer */
@@ -72,18 +86,10 @@ footer {
 
 }
 @media (max-width: 768px) {
-    .card-img-top {
-        width: 100%;
-        height: 40vw;
-        object-fit: cover;
-    }
+
 }
 @media (max-width: 576px) {
-    .card-img-top {
-        width: 100%;
-        height: 50vw;
-        object-fit: cover;
-    }
+
 }
 
 /*--- Bootstrap Padding Fix --*/

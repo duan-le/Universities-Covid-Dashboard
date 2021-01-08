@@ -5,8 +5,8 @@
         <link rel="stylesheet" href="calgary_style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Univserity of Calgary</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/d3js/6.3.1/d3.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
         <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
@@ -69,10 +69,32 @@
             </div>
         </div>
 
-        <div class="map-size">
-            <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item map" src="https://ucalgary-gs.maps.arcgis.com/apps/webappviewer/index.html?id=16adda2b3e1940ae8106749b6aeb106c" allowfullscreen></iframe>
+        <!-- map temp -->
+        <div id="accordion">
+            <div class="card">
+              <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                        Covid info map
+                    </button>
+                </h5>
+              </div>
+          
+              <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                    <div class="card-body">
+                        <div class="map-size">
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item map" src="https://ucalgary-gs.maps.arcgis.com/apps/webappviewer/index.html?id=16adda2b3e1940ae8106749b6aeb106c" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+              </div>
             </div>
+        </div>
+
+        <!-- stuff after map -->
+        <div class="info-content">
+            
         </div>
         
 
@@ -80,7 +102,6 @@
         <footer class="container-fluid">
             <p>HackTogether 2020 </p>
             <p>© Covid Overflow 2020</p>
-
         </footer>
 
     </body>
