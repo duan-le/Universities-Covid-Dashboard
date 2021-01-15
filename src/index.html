@@ -41,7 +41,7 @@
 					</div>
 				  </li>
 			  <li class="nav-item">
-				<a class="nav-link" href="template.html">About Us</a>
+				<a class="nav-link" href="about/about.html">About Us</a>
 			  </li>
 			</ul>
 		  </div>
@@ -57,19 +57,23 @@
 	</ul>
 	<div class="carousel-inner">
 		<div class="carousel-item active">
-			<img src="img/background.jpg">
+			<img src="assets/homepage/background.jpg">
 			<div class="carousel-caption">
 				<h1 class="display-2">Covid Overflow</h1>
 				<h3 > Covid-19 Statistics for Universities Across Canada </h3>
 				<!--<button type="button" class="btn btn-outline-light btn-lg">Find a University</button>-->
-				<button type="button " class="btn btn-primary btn-lg">Find a University</button>
+				<button type="button" class="btn btn-primary btn-lg">Find a University</button>
 			</div>
 		</div>
 		<div class="carousel-item">
-			<img src="img/background2.jpg">
+			<img src="assets/homepage/background2.jpg">
+			<div class="carousel-caption">
+				<h2 class="display-2">Latest Covid Numbers Across Canada</h1>
+				<!--<button type="button" onclick="location.href='#summary'" class="btn btn-primary btn-lg">Find out</button>-->
+			</div>
 		</div>
 		<div class="carousel-item">
-			<img src="img/background3.jpg">
+			<img src="assets/homepage/background3.jpg">
 		</div>
 	</div>
 </div>
@@ -78,13 +82,127 @@
 <div class="container-fluid padding">
 	<div class="row welcome text-center">
 		<div class="col-12">
-			<h1 class="display-4">Latest Covid Summary</h1>
+			<h1 id="summary" class="display-4">Latest Covid Summary</h1>
 		</div>
-		<hr>
-		<div class="col-12">
-			<p class="lead">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."</p>
-		</div>
+		<table class="table">
+			<caption>Last Updated 2020-01-10</caption>
+			<thead class="thead-light">
+			  <tr>
+				<th scope="col">Province</th>
+				<th scope="col">New Deaths</th>
+				<th scope="col">New Cases</th>
+				<th scope="col">Active Cases</th>
+				<th scope="col">Total Deaths</th>
+				<th scope="col">Total Cases</th>
+			  </tr>
+			</thead>
+			<tbody>
+			  <tr>
+				<th scope="row">Alberta</th>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+			  </tr>
+			  <tr>
+				<th scope="row">British Columbia</th>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+			  </tr>
+			  <tr>
+				<th scope="row">Manitoba</th>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+			  </tr>
+			  <tr>
+				<th scope="row">New Brunswick</th>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+			  </tr>
+			  <tr>
+				<th scope="row">Newfoundland and Labrador</th>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+			  </tr>
+			  <tr>
+				<th scope="row">Nova Scotia</th>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+			  </tr>
+			  <tr>
+				<th scope="row">Prince Edward Island</th>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+			  </tr>
+			  <tr>
+				<th scope="row">Quebec</th>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+			  </tr>
+			  <tr>
+				<th scope="row">Saskatchewan</th>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+			  </tr>
+			  <tr>
+				<th scope="row">Northwest Territories</th>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+			  </tr>
+			  <tr>
+				<th scope="row">Nunavut</th>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+			  </tr>
+			  <tr>
+				<th scope="row">Yukon</th>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+			  </tr>
+			  <tr>
+				<th scope="row">Total</th>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+			  </tr>
+			</tbody>
+		  </table>
 	</div>
 </div>
 
