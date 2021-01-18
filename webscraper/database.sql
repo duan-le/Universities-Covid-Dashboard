@@ -16,7 +16,7 @@ CREATE TABLE alberta (
     university_name VARCHAR (30),
     cases VARCHAR (30),
     date_range VARCHAR (60),
-    PRIMARY KEY (date_range),
+    PRIMARY KEY (date_range, university_name),
     FOREIGN KEY (university_name) REFERENCES universities(university_name)
 ) engine InnoDB;
 
@@ -24,7 +24,7 @@ CREATE TABLE british_columbia (
     university_name VARCHAR (30),
     cases VARCHAR (30),
     date_range VARCHAR (60),
-    PRIMARY KEY (date_range),
+    PRIMARY KEY (date_range, university_name),
     FOREIGN KEY (university_name) REFERENCES universities(university_name)
 ) engine InnoDB;
 
@@ -32,7 +32,7 @@ CREATE TABLE saskatchewan (
     university_name VARCHAR (30),
     cases VARCHAR (30),
     date_range VARCHAR (60),
-    PRIMARY KEY (date_range),
+    PRIMARY KEY (date_range, university_name),
     FOREIGN KEY (university_name) REFERENCES universities(university_name)
 ) engine InnoDB;
 
@@ -40,7 +40,7 @@ CREATE TABLE quebec (
     university_name VARCHAR (30),
     cases VARCHAR (30),
     date_range VARCHAR (60),
-    PRIMARY KEY (date_range),
+    PRIMARY KEY (date_range, university_name),
     FOREIGN KEY (university_name) REFERENCES universities(university_name)
 ) engine InnoDB;
 
@@ -48,7 +48,7 @@ CREATE TABLE manitoba (
     university_name VARCHAR (30),
     cases VARCHAR (30),
     date_range VARCHAR (60),
-    PRIMARY KEY (date_range),
+    PRIMARY KEY (date_range, university_name),
     FOREIGN KEY (university_name) REFERENCES universities(university_name)
 ) engine InnoDB;
 
@@ -56,6 +56,6 @@ CREATE TABLE ontario (
     university_name VARCHAR (30),
     cases VARCHAR (30),
     date_range VARCHAR (60),
-    PRIMARY KEY (date_range),
+    PRIMARY KEY (date_range, university_name),
     FOREIGN KEY (university_name) REFERENCES universities(university_name)
 ) engine InnoDB;

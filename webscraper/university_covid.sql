@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 18, 2021 at 12:25 AM
+-- Generation Time: Jan 18, 2021 at 12:43 AM
 -- Server version: 8.0.17
 -- PHP Version: 7.3.10
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `alberta` (
-  `university_name` varchar(30) DEFAULT NULL,
+  `university_name` varchar(30) NOT NULL,
   `cases` varchar(30) DEFAULT NULL,
   `date_range` varchar(60) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -41,7 +41,7 @@ CREATE TABLE `alberta` (
 --
 
 CREATE TABLE `british_columbia` (
-  `university_name` varchar(30) DEFAULT NULL,
+  `university_name` varchar(30) NOT NULL,
   `cases` varchar(30) DEFAULT NULL,
   `date_range` varchar(60) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -53,7 +53,7 @@ CREATE TABLE `british_columbia` (
 --
 
 CREATE TABLE `manitoba` (
-  `university_name` varchar(30) DEFAULT NULL,
+  `university_name` varchar(30) NOT NULL,
   `cases` varchar(30) DEFAULT NULL,
   `date_range` varchar(60) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -65,7 +65,7 @@ CREATE TABLE `manitoba` (
 --
 
 CREATE TABLE `ontario` (
-  `university_name` varchar(30) DEFAULT NULL,
+  `university_name` varchar(30) NOT NULL,
   `cases` varchar(30) DEFAULT NULL,
   `date_range` varchar(60) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -77,7 +77,7 @@ CREATE TABLE `ontario` (
 --
 
 CREATE TABLE `quebec` (
-  `university_name` varchar(30) DEFAULT NULL,
+  `university_name` varchar(30) NOT NULL,
   `cases` varchar(30) DEFAULT NULL,
   `date_range` varchar(60) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -89,7 +89,7 @@ CREATE TABLE `quebec` (
 --
 
 CREATE TABLE `saskatchewan` (
-  `university_name` varchar(30) DEFAULT NULL,
+  `university_name` varchar(30) NOT NULL,
   `cases` varchar(30) DEFAULT NULL,
   `date_range` varchar(60) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -123,42 +123,42 @@ INSERT INTO `universities` (`university_name`, `location`) VALUES
 -- Indexes for table `alberta`
 --
 ALTER TABLE `alberta`
-  ADD PRIMARY KEY (`date_range`),
+  ADD PRIMARY KEY (`date_range`,`university_name`),
   ADD KEY `university_name` (`university_name`);
 
 --
 -- Indexes for table `british_columbia`
 --
 ALTER TABLE `british_columbia`
-  ADD PRIMARY KEY (`date_range`),
+  ADD PRIMARY KEY (`date_range`,`university_name`),
   ADD KEY `university_name` (`university_name`);
 
 --
 -- Indexes for table `manitoba`
 --
 ALTER TABLE `manitoba`
-  ADD PRIMARY KEY (`date_range`),
+  ADD PRIMARY KEY (`date_range`,`university_name`),
   ADD KEY `university_name` (`university_name`);
 
 --
 -- Indexes for table `ontario`
 --
 ALTER TABLE `ontario`
-  ADD PRIMARY KEY (`date_range`),
+  ADD PRIMARY KEY (`date_range`,`university_name`),
   ADD KEY `university_name` (`university_name`);
 
 --
 -- Indexes for table `quebec`
 --
 ALTER TABLE `quebec`
-  ADD PRIMARY KEY (`date_range`),
+  ADD PRIMARY KEY (`date_range`,`university_name`),
   ADD KEY `university_name` (`university_name`);
 
 --
 -- Indexes for table `saskatchewan`
 --
 ALTER TABLE `saskatchewan`
-  ADD PRIMARY KEY (`date_range`),
+  ADD PRIMARY KEY (`date_range`,`university_name`),
   ADD KEY `university_name` (`university_name`);
 
 --

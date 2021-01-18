@@ -4,10 +4,10 @@ import mysql.connector
 from bs4 import BeautifulSoup
 
 mydb = mysql.connector.connect(
-  host = "localhost",
-  user = "root",
-  password = "password",
-  database = "covid_database"
+    host = "localhost",
+    user = "root",
+    password = "password",
+    database = "covid_database"
 )
 
 mycursor = mydb.cursor()

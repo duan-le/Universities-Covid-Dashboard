@@ -4,10 +4,10 @@ import csv
 from bs4 import BeautifulSoup
 
 mydb = mysql.connector.connect(
-  host = "localhost",
-  user = "root",
-  password = "password",
-  database = "university_covid"
+    host = "localhost",
+    user = "root",
+    password = "password",
+    database = "university_covid"
 )
 
 mycursor = mydb.cursor()
