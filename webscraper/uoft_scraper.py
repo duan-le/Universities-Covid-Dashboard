@@ -1,6 +1,16 @@
 import requests
+import mysql.connector
 import csv
 from bs4 import BeautifulSoup
+
+mydb = mysql.connector.connect(
+  host = "localhost",
+  user = "root",
+  password = "password",
+  database = "university_covid"
+)
+
+mycursor = mydb.cursor()
 
 r = requests.get('https://www.utoronto.ca/utogether/covid19-dashboard')
 
@@ -21,7 +31,12 @@ with open('uoft_covid_cases.csv', 'w', newline='') as csv_file:
         row.append(dateRanges[i].get_text())
         row.append(communityCases[i].get_text())
         row.append(campusCases[i].get_text())
+        sql = "INSERT INTO ontario (university_name, date_range, cases) VALUES (%s, %s, %s)"
+        val = ("University of Toronto", str(row[0]), str(int(row[1]) + int(row[2])))
+        mycursor.execute(sql, val)
+        mydb.commit()
         writer.writerow(row)
+        print(row)
         row.clear()
       
         

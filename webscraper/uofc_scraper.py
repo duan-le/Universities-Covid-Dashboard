@@ -1,8 +1,18 @@
 import requests
 import csv
+import mysql.connector
 from bs4 import BeautifulSoup
 
-r = requests.get('https://ucalgary.ca/risk/emergency-management/covid-19-response/covid-19-dashboard')
+mydb = mysql.connector.connect(
+  host = "localhost",
+  user = "root",
+  password = "password",
+  database = "covid_database"
+)
+
+mycursor = mydb.cursor()
+
+r = requests.get('https://www.ucalgary.ca/risk/emergency-management/covid-19-response/covid-19-dashboard/past-cases')
 
 soup = BeautifulSoup(r.text, 'html.parser')
 results = soup.find_all('div', {'class': 'layout-blocks-ucws-text container-fluid roundable block text'})
@@ -25,5 +35,9 @@ with open('uofc_covid_cases.csv', 'w', newline='') as csv_file:
             if len(row) == 2:
                 row[0] = row[0].strip()
                 row[1] = row[1].strip().strip('.')
+                # sql = "INSERT INTO uofc (uni_Name, cdate, cases) VALUES (%s, %s, %s)"
+                # val = ("University of Calgary", str(row[0]), 1)
+                # mycursor.execute(sql, val)
+                # mydb.commit()
                 writer.writerow(row)
                 print(row)

@@ -7,7 +7,7 @@ mydb = mysql.connector.connect(
   host = "localhost",
   user = "root",
   password = "password",
-  database = "covid_database"
+  database = "university_covid"
 )
 
 mycursor = mydb.cursor()
@@ -30,7 +30,7 @@ with open('uofm_covid_cases.csv', 'w', newline='') as csv_file:
             i += 1
             if i == 2:
                 print(row)
-                sql = "INSERT INTO umanitoba (uni_Name, cdate, cases) VALUES (%s, %s, %s)"
+                sql = "INSERT INTO manitoba (university_name, date_range, cases) VALUES (%s, %s, %s)"
                 val = ("University of Manitoba", str(row[0]), str(row[1]))
                 mycursor.execute(sql, val)
                 mydb.commit()
