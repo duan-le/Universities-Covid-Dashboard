@@ -7,20 +7,20 @@ html, body {
   color: #222;
 }
 
-/* Nav Bar*/
+/* Nav Bar */
 .navbar {
     padding: 1rem;
-  }
-  .navbar-nav li {
+}
+.navbar-nav li {
     padding-right: 1.5rem;
-  }
-  .nav-link {
+}
+.nav-link {
     font-size: 1.1em !important;
-  }
-  .dropdown .dropdown-menu {
+}
+.dropdown .dropdown-menu {
     border-top: 1px solid transparent;
     background-color: #f7f7f7;
-  }
+}
 
 .card-img-top {
     width: 100%;
