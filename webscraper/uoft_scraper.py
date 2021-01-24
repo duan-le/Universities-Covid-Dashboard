@@ -21,28 +21,21 @@ dateRanges = resultsRow[0].find_all('div', {'class': 'field field-name-field-upd
 communityCases = resultsRow[0].find_all('div', {'class': 'field field-name-field-community-cases field-type-number-integer field-label-hidden'})
 campusCases = resultsRow[0].find_all('div', {'class': 'total-outbreaks'})
 
-with open('uoft_covid_cases.csv', 'w', newline='') as csv_file:
-    writer  = csv.writer(csv_file)
-    columns = ['Date Range', 'Number of Cases in the Community', 'Number of Cases on Campus']
-    writer.writerow(columns)
-
-    row = []
-    for i in range(0, len(dateRanges)):
-        row.append(dateRanges[i].get_text())
-        row.append(communityCases[i].get_text())
-        row.append(campusCases[i].get_text())
-        sql = "INSERT INTO ontario (university_name, date_range, cases) VALUES (%s, %s, %s)"
-        val = ("University of Toronto", str(row[0]), str(int(row[1]) + int(row[2])))
+columns = ['Date Range', 'Number of Cases in the Community', 'Number of Cases on Campus']
+print(columns)
+print("Added:")
+row = []
+for i in range(0, len(dateRanges)):
+    row.append(dateRanges[i].get_text())
+    row.append(communityCases[i].get_text())
+    row.append(campusCases[i].get_text())
+    sql = "INSERT INTO ontario (university_name, date_range, cases) VALUES (%s, %s, %s)"
+    val = ("University of Toronto", str(row[0]), str(int(row[1]) + int(row[2])))
+    try:
         mycursor.execute(sql, val)
         mydb.commit()
-        writer.writerow(row)
-        print(row)
+    except:
         row.clear()
-      
-        
-        
-        
-        
-        
-        
-
+        continue
+    print(row)
+    row.clear()
