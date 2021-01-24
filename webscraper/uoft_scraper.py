@@ -24,6 +24,7 @@ campusCases = resultsRow[0].find_all('div', {'class': 'total-outbreaks'})
 columns = ['Date Range', 'Number of Cases in the Community', 'Number of Cases on Campus']
 print(columns)
 print("Added:")
+
 row = []
 for i in range(0, len(dateRanges)):
     row.append(dateRanges[i].get_text())
