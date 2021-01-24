@@ -19,28 +19,42 @@ results = soup.find_all('div', {'class': 'layout-blocks-ucws-text container-flui
 results = results[0].find_all('div', {'class': 'col-sm-12 one-col'})
 results = results[0].find_all('p')
 
-with open('uofc_covid_cases.csv', 'w', newline='') as csv_file:
-    writer  = csv.writer(csv_file)
-    columns = ['Date', 'Location']
-    writer.writerow(columns)
+sql = "DELETE FROM alberta WHERE university_name = 'University of Calgary'"
+mycursor.execute(sql)
+mydb.commit()
+
+columns = ['Date', 'Location']
+print(columns)
+print("Added:")
+
+for p in results:
+    if p.find('strong') != None:
+        p.strong.decompose()
     
-    for p in results:
-        if p.find('strong') != None:
-            p.strong.decompose()
-        
-        rows = p.get_text().strip().replace('notification:', '|').replace('Read more.', '').replace('Read More.', '').replace(u'\xa0', ' ').split('\n')
-    
-        for row in rows:
-            row = row.split('|')
-            if len(row) == 2:
-                row[0] = row[0].strip()
-                row[1] = row[1].strip().strip('.')
-                sql = "INSERT INTO alberta (university_name, date_range, cases) VALUES (%s, %s, %s)"
-                val = ("University of Calgary", str(row[0]), str(1))
+    rows = p.get_text().strip().replace('notification:', '|').replace('Read more.', '').replace('Read More.', '').replace(u'\xa0', ' ').split('\n')
+
+    for row in rows:
+        row = row.split('|')
+        if len(row) == 2:
+            row[0] = row[0].strip()
+            row[1] = row[1].strip().strip('.')
+            sql = "INSERT INTO alberta (university_name, date_range, cases) VALUES (%s, %s, %s)"
+            val = ("University of Calgary", str(row[0]), str(1))
+            try:
                 mycursor.execute(sql, val)
                 mydb.commit()
-                writer.writerow(row)
+            except:
+                sql2 = "SELECT cases FROM alberta WHERE university_name = 'University of Calgary' AND date_range = '%s'" % (str(row[0]))
+                mycursor.execute(sql2)
+                selectResult = mycursor.fetchall()
+                sql3 = "UPDATE alberta SET cases = '%s' WHERE university_name = 'University of Calgary' AND date_range = '%s'" % (str(int(selectResult[0][0]) + 1), str(row[0]))
+                mycursor.execute(sql3)
+                mydb.commit()
                 print(row)
+                row.clear()
+                continue
+            print(row)
+            row.clear()
 
 r = requests.get('https://ucalgary.ca/risk/emergency-management/covid-19-response/covid-19-dashboard')
 
@@ -49,23 +63,31 @@ results = soup.find_all('div', {'class': 'layout-blocks-ucws-text container-flui
 results = results[2].find_all('div', {'class': 'col-sm-12 one-col'})
 results = results[0].find_all('p')
 
-with open('uofc_covid_cases.csv', 'a', newline='') as csv_file:
-    writer  = csv.writer(csv_file)
-
-    for p in results:
-        if p.find('strong') != None:
-            p.strong.decompose()
-        
-        rows = p.get_text().strip().replace('notification:', '|').replace('Read more.', '').replace('Read More.', '').replace(u'\xa0', ' ').replace('notification.', '|').split('\n')
+for p in results:
+    if p.find('strong') != None:
+        p.strong.decompose()
     
-        for row in rows:
-            row = row.split('|')
-            if len(row) == 2:
-                row[0] = row[0].strip()
-                row[1] = row[1].strip().strip('.')
-                sql = "INSERT INTO alberta (university_name, date_range, cases) VALUES (%s, %s, %s)"
-                val = ("University of Calgary", str(row[0]), str(1))
+    rows = p.get_text().strip().replace('notification:', '|').replace('Read more.', '').replace('Read More.', '').replace(u'\xa0', ' ').replace('notification.', '|').split('\n')
+
+    for row in rows:
+        row = row.split('|')
+        if len(row) == 2:
+            row[0] = row[0].strip()
+            row[1] = row[1].strip().strip('.')
+            sql = "INSERT INTO alberta (university_name, date_range, cases) VALUES (%s, %s, %s)"
+            val = ("University of Calgary", str(row[0]), str(1))
+            try:
                 mycursor.execute(sql, val)
                 mydb.commit()
-                writer.writerow(row)
+            except:
+                sql2 = "SELECT cases FROM alberta WHERE university_name = 'University of Calgary' AND date_range = '%s'" % (str(row[0]))
+                mycursor.execute(sql2)
+                selectResult = mycursor.fetchall()
+                sql3 = "UPDATE alberta SET cases = '%s' WHERE university_name = 'University of Calgary' AND date_range = '%s'" % (str(int(selectResult[0][0]) + 1), str(row[0]))
+                mycursor.execute(sql3)
+                mydb.commit()
                 print(row)
+                row.clear()
+                continue
+            print(row)
+            row.clear()
