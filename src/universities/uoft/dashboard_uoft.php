@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <link rel="stylesheet" href="../universities_style.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Univserity of Toronto</title>
+  <title>University of Toronto</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
@@ -113,7 +113,7 @@
 
   <div class="financial-mental container-fluid text-center">
     <p>
-      For financial resources, Univeristy of Toronto provides financial aid
+      For financial resources, University of Toronto provides financial aid
       and awards to students each year. Find out more
       <a href="https://future.utoronto.ca/finances/financial-aid/" target="_blank">here.</a>
     </p>

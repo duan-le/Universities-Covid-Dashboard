@@ -113,7 +113,7 @@
 
   <div class="financial-mental container-fluid text-center">
     <p>
-      For financial resources, Univeristy of Calgary provides financial aid
+      For financial resources, University of Calgary provides financial aid
       and awards to students each year. Find out more
       <a href="https://www.ucalgary.ca/pubs/calendar/current/awards-financial-assist-main.html" target="_blank">here.</a>
     </p>
