@@ -83,7 +83,7 @@
 			<h1 id="summary" class="display-4">Latest Covid Summary</h1>
 		</div>
 		<table class="table">
-			<caption>Last Updated 2020-01-10</caption>
+			<caption class="last-update">Last Updated:</caption>
 			<thead class="thead-light">
 			  <tr>
 				<th scope="col">Province</th>
@@ -215,6 +215,7 @@
             document.querySelector(`.${provincesTerritoriesArr[i]}-total-deaths`).innerHTML = obj.summary[i].cumulative_deaths;
             document.querySelector(`.${provincesTerritoriesArr[i]}-recovered`).innerHTML = obj.summary[i].recovered;
         }
+        document.querySelector(".last-update").innerHTML = `Last Updated (dd-mm-yyyy): ${obj.summary[0].date}`;
     });
 </script>
 
