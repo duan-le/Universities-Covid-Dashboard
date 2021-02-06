@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <link rel="stylesheet" href="../universities_style.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>University of Calgary</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
@@ -12,6 +11,7 @@
   <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
   <link rel="shortcut icon" href="../assets/favicon/favicon-32x32.ico" />
 	<link rel="shortcut icon" href="../assets/favicon/favicon-16x16.ico" />	
+  <link rel="stylesheet" href="../universities_style.css" />
 </head>
 
 <body>
