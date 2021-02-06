@@ -18,7 +18,7 @@
   <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
     <div class="container-fluid">
       <!-- Brand/Logo -->
-      <a class="navbar-brand" href="">Covid Overflow</a>
+      <a class="navbar-brand" href="../../index.html">Covid Overflow</a>
 
       <!--Collapsible navbar for small screens-->
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
@@ -33,14 +33,14 @@
               Universities
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="">University of Toronto</a>
-              <a class="dropdown-item" href="">University of Calgary</a>
-              <a class="dropdown-item" href="">McGill University</a>
-              <a class="dropdown-item" href="">University of Manitoba</a>
+            <a class="dropdown-item" href="../uoft/dashboard_uoft.php">University of Toronto</a>
+						<a class="dropdown-item" href="../uofc/dashboard_uofc.php">University of Calgary</a>
+						<a class="dropdown-item" href="./dashboard_mcgill.php">McGill University</a>
+						<a class="dropdown-item" href="../uofm/dashboard_uofm.php">University of Manitoba</a>
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="">About Us</a>
+            <a class="nav-link" href="../../about/about.html">About Us</a>
           </li>
         </ul>
       </div>
