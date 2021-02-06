@@ -1,6 +1,5 @@
 import requests
 import mysql.connector
-import csv
 from bs4 import BeautifulSoup
 
 mydb = mysql.connector.connect(
