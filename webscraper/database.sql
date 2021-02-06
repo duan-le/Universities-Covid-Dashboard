@@ -3,7 +3,6 @@ DROP TABLE IF EXISTS alberta;
 DROP TABLE IF EXISTS quebec;
 DROP TABLE IF EXISTS manitoba;
 DROP TABLE IF EXISTS ontario;
-DROP TABLE IF EXISTS canada;
 
 CREATE TABLE universities (
     university_name VARCHAR (30) NOT NULL,
@@ -42,16 +41,6 @@ CREATE TABLE ontario (
     PRIMARY KEY (date_range, university_name),
     FOREIGN KEY (university_name) REFERENCES universities(university_name)
 ) engine InnoDB;
-
-CREATE TABLE canada (
-    province VARCHAR (30),
-    new_deaths VARCHAR (30),
-    new_cases VARCHAR (30),
-    active_cases VARCHAR (30),
-    total_deaths VARCHAR (30),
-    total_cases VARCHAR (30),
-    PRIMARY KEY (province)
- ) engine InnoDB;
 
  INSERT INTO `universities` (`university_name`, `location`) VALUES
 ('McGill University', '845 Sherbrooke St W, Montreal, Quebec H3A 0G4'),
