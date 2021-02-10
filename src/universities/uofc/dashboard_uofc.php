@@ -90,7 +90,7 @@
             if ($link === false) {
               die("ERROR: Could not connect. " . mysqli_connect_error());
             }
-            $sql = "SELECT * FROM alberta WHERE university_name = 'University of Calgary' AND cases != 0";
+            $sql = "SELECT * FROM alberta WHERE university_name = 'University of Calgary' AND cases != 0 ORDER BY STR_TO_DATE(date_range, '%e-%c-%Y') DESC";
             if ($result = mysqli_query($link, $sql)) {
               if (mysqli_num_rows($result) > 0) {
                 while ($row = mysqli_fetch_array($result)) {
