@@ -97,7 +97,7 @@
                   $date_arr = explode("-", $row['date_range']);
                   $date = ($date_arr[0] < 10 ? "0" . $date_arr[0] : $date_arr[0]) . "-" . ($date_arr[1] < 10 ? "0" . $date_arr[1] : $date_arr[1]) . "-" . $date_arr[2];
                   echo "<tr>";
-                  echo "<th scope='row'>" . $row['date_range'] . "</th>";
+                  echo "<th scope='row'>" . $date . "</th>";
                   echo "<td>" . $row['cases'] . "</td>";
                   echo "</tr>";
                 }
