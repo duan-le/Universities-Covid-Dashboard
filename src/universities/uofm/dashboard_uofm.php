@@ -77,7 +77,7 @@
   <div class="container-fluid padding">
     <div class="row justify-content-center">
       <div class="col-auto">
-        <table class="table table-hover table-responsive">
+        <table class="table table-striped table-bordered" id="data-table">
           <thead>
             <tr>
               <th scope="col">Date (dd-mm-yyyy)</th>
@@ -128,6 +128,16 @@
       <a href="https://umanitoba.ca/student-supports/student-health-and-wellness" target="_blank">here.</a>
     </p>
   </div>
+
+  <script src=https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js></script>
+  <script src=https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.20/js/jquery.dataTables.min.js></script>
+  <script src=https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.20/js/dataTables.bootstrap4.min.js></script>
+
+  <script>
+    $(document).ready(function() {
+      $('#data-table').DataTable();
+    });
+  </script>
 
   <!--- Footer -->
   <footer class="container-fluid">
