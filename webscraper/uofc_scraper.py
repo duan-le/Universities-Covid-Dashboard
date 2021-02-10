@@ -37,16 +37,42 @@ for p in results:
         if len(row) == 2:
             row[0] = row[0].strip()
             row[1] = row[1].strip().strip('.')
+            dateStringList = row[0].split();
+            dateString = ''
+            if (dateStringList[0] == 'Jan.' or dateStringList[0] == 'January'):
+                dateString = dateStringList[1] + '-1-2021'
+            elif (dateStringList[0] == 'Feb.' or dateStringList[0] == 'February'):
+                dateString = dateStringList[1] + '-2-2021'
+            elif (dateStringList[0] == 'Mar.' or dateStringList[0] == 'March'):
+                dateString = dateStringList[1] + '-3-2020'
+            elif (dateStringList[0] == 'Apr.' or dateStringList[0] == 'April'):
+                dateString = dateStringList[1] + '-4-2020'
+            elif (dateStringList[0] == 'May.' or dateStringList[0] == 'May'):
+                dateString = dateStringList[1] + '-5-2020'
+            elif (dateStringList[0] == 'Jun.' or dateStringList[0] == 'June'):
+                dateString = dateStringList[1] + '-6-2020'
+            elif (dateStringList[0] == 'Jul.' or dateStringList[0] == 'July'):
+                dateString = dateStringList[1] + '-7-2020'
+            elif (dateStringList[0] == 'Aug.' or dateStringList[0] == 'August'):
+                dateString = dateStringList[1] + '-8-2020'
+            elif (dateStringList[0] == 'Sept.' or dateStringList[0] == 'September'):
+                dateString = dateStringList[1] + '-9-2020'
+            elif (dateStringList[0] == 'Oct.' or dateStringList[0] == 'October'):
+                dateString = dateStringList[1] + '-10-2020'
+            elif (dateStringList[0] == 'Nov.' or dateStringList[0] == 'November'):
+                dateString = dateStringList[1] + '-11-2020'
+            elif (dateStringList[0] == 'Dec.' or dateStringList[0] == 'December'):
+                dateString = dateStringList[1] + '-12-2020'
             sql = "INSERT INTO alberta (university_name, date_range, cases) VALUES (%s, %s, %s)"
-            val = ("University of Calgary", str(row[0]), str(1))
+            val = ("University of Calgary", dateString, str(1))
             try:
                 mycursor.execute(sql, val)
                 mydb.commit()
             except:
-                sql2 = "SELECT cases FROM alberta WHERE university_name = 'University of Calgary' AND date_range = '%s'" % (str(row[0]))
+                sql2 = "SELECT cases FROM alberta WHERE university_name = 'University of Calgary' AND date_range = '%s'" % (dateString)
                 mycursor.execute(sql2)
                 selectResult = mycursor.fetchall()
-                sql3 = "UPDATE alberta SET cases = '%s' WHERE university_name = 'University of Calgary' AND date_range = '%s'" % (str(int(selectResult[0][0]) + 1), str(row[0]))
+                sql3 = "UPDATE alberta SET cases = '%s' WHERE university_name = 'University of Calgary' AND date_range = '%s'" % (str(int(selectResult[0][0]) + 1), dateString)
                 mycursor.execute(sql3)
                 mydb.commit()
                 print(row)
@@ -73,16 +99,42 @@ for p in results:
         if len(row) == 2:
             row[0] = row[0].strip()
             row[1] = row[1].strip().strip('.')
+            dateStringList = row[0].split();
+            dateString = ''
+            if (dateStringList[0] == 'Jan.' or dateStringList[0] == 'January'):
+                dateString = dateStringList[1] + '-1-2021'
+            elif (dateStringList[0] == 'Feb.' or dateStringList[0] == 'February'):
+                dateString = dateStringList[1] + '-2-2021'
+            elif (dateStringList[0] == 'Mar.' or dateStringList[0] == 'March'):
+                dateString = dateStringList[1] + '-3-2020'
+            elif (dateStringList[0] == 'Apr.' or dateStringList[0] == 'April'):
+                dateString = dateStringList[1] + '-4-2020'
+            elif (dateStringList[0] == 'May.' or dateStringList[0] == 'May'):
+                dateString = dateStringList[1] + '-5-2020'
+            elif (dateStringList[0] == 'Jun.' or dateStringList[0] == 'June'):
+                dateString = dateStringList[1] + '-6-2020'
+            elif (dateStringList[0] == 'Jul.' or dateStringList[0] == 'July'):
+                dateString = dateStringList[1] + '-7-2020'
+            elif (dateStringList[0] == 'Aug.' or dateStringList[0] == 'August'):
+                dateString = dateStringList[1] + '-8-2020'
+            elif (dateStringList[0] == 'Sep.' or dateStringList[0] == 'September'):
+                dateString = dateStringList[1] + '-9-2020'
+            elif (dateStringList[0] == 'Oct.' or dateStringList[0] == 'October'):
+                dateString = dateStringList[1] + '-10-2020'
+            elif (dateStringList[0] == 'Nov.' or dateStringList[0] == 'November'):
+                dateString = dateStringList[1] + '-11-2020'
+            elif (dateStringList[0] == 'Dec.' or dateStringList[0] == 'December'):
+                dateString = dateStringList[1] + '-12-2020'
             sql = "INSERT INTO alberta (university_name, date_range, cases) VALUES (%s, %s, %s)"
-            val = ("University of Calgary", str(row[0]), str(1))
+            val = ("University of Calgary", dateString, str(1))
             try:
                 mycursor.execute(sql, val)
                 mydb.commit()
             except:
-                sql2 = "SELECT cases FROM alberta WHERE university_name = 'University of Calgary' AND date_range = '%s'" % (str(row[0]))
+                sql2 = "SELECT cases FROM alberta WHERE university_name = 'University of Calgary' AND date_range = '%s'" % (dateString)
                 mycursor.execute(sql2)
                 selectResult = mycursor.fetchall()
-                sql3 = "UPDATE alberta SET cases = '%s' WHERE university_name = 'University of Calgary' AND date_range = '%s'" % (str(int(selectResult[0][0]) + 1), str(row[0]))
+                sql3 = "UPDATE alberta SET cases = '%s' WHERE university_name = 'University of Calgary' AND date_range = '%s'" % (str(int(selectResult[0][0]) + 1), dateString)
                 mycursor.execute(sql3)
                 mydb.commit()
                 print(row)
