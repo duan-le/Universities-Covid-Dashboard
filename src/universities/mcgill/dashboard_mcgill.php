@@ -80,7 +80,7 @@
         <table class="table table-hover table-responsive">
           <thead>
             <tr>
-              <th scope="col">Date</th>
+              <th scope="col">Date (dd-mm-yyyy)</th>
               <th scope="col">Active Cases</th>
             </tr>
           </thead>
