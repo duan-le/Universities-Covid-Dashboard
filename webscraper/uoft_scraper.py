@@ -29,7 +29,7 @@ for i in range(0, len(dateRanges)):
     row.append(dateRanges[i].get_text())
     row.append(communityCases[i].get_text())
     row.append(campusCases[i].get_text())
-    dateStringList =  row[0].split('to');
+    dateStringList = row[0].split('to');
     dateStringList2 = dateStringList[0].split()
     dateString = ''
     if (dateStringList2[0] == 'Jan.' or dateStringList2[0] == 'January'):

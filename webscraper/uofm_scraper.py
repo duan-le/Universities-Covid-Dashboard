@@ -27,7 +27,7 @@ for p in results[0].find_all('td'):
         row.append(p.get_text().strip())
         i += 1
         if i == 2:
-            dateStringList =  row[0].split('-');
+            dateStringList = row[0].split('-');
             dateStringList2 = dateStringList[0].split()
             dateString = ''
             if (dateStringList2[0] == 'Jan.' or dateStringList2[0] == 'January'):
