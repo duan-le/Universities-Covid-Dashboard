@@ -34,10 +34,10 @@
               Universities
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="../uoft/dashboard_uoft.php">University of Toronto</a>
+            <a class="dropdown-item" href="../mcgill/dashboard_mcgill.php">McGill University</a>
 						<a class="dropdown-item" href="./dashboard_uofc.php">University of Calgary</a>
-						<a class="dropdown-item" href="../mcgill/dashboard_mcgill.php">McGill University</a>
 						<a class="dropdown-item" href="../uofm/dashboard_uofm.php">University of Manitoba</a>
+            <a class="dropdown-item" href="../uoft/dashboard_uoft.php">University of Toronto</a>
             </div>
           </li>
           <li class="nav-item">
