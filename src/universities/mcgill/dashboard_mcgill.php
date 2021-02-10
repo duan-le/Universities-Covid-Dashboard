@@ -9,8 +9,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-  <link rel="shortcut icon" href="../assets/favicon/favicon-32x32.ico" />
-	<link rel="shortcut icon" href="../assets/favicon/favicon-16x16.ico" />	
+  <link rel="shortcut icon" href="../../assets/favicon/favicon-32x32.ico" />
+	<link rel="shortcut icon" href="../../assets/favicon/favicon-16x16.ico" />	
   <link rel="stylesheet" href="../universities_style.css" />
 </head>
 
@@ -73,6 +73,74 @@
     </div>
   </div>
 
+  <!-- Covid Graph -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+  <div class="container-fluid padding">
+  <div class="chart-container">
+  <canvas id="myChart"></canvas>
+  <script>
+    <?php
+    $link = mysqli_connect("localhost", "root", "password", "university_covid");
+    if ($link === false) {
+      die("ERROR: Could not connect. " . mysqli_connect_error());
+    }
+    $sql = "SELECT * FROM quebec WHERE university_name = 'McGill University' AND cases != 0 ORDER BY STR_TO_DATE(date_range, '%e-%c-%Y') ASC";
+    $casesData = array();
+    $totalCasesData = array();
+    $dateData = array();
+    if ($result = mysqli_query($link, $sql)) {
+      if (mysqli_num_rows($result) > 0) {
+        $i = 0;
+        while ($row = mysqli_fetch_array($result)) {
+          $date_arr = explode("-", $row['date_range']);
+          $date = $date_arr[2] . "-" . ($date_arr[1] < 10 ? "0" . $date_arr[1] : $date_arr[1]) . "-" . ($date_arr[0] < 10 ? "0" . $date_arr[0] : $date_arr[0]);
+          $casesData[] = $row['cases'];
+          $dateData[] = $date;
+          if ($i == 0) {
+            $totalCasesData[] = $casesData[$i];
+          } else {
+            $totalCasesData[] = intval($casesData[$i]) + intval($totalCasesData[$i - 1]);
+          }
+          $i++;
+        }
+        echo "let casesData = " . json_encode($casesData) . ";";
+        echo "let totalCasesData = " . json_encode($totalCasesData) . ";";
+        echo "let dateData = " . json_encode($dateData) . ";";
+      }
+      mysqli_free_result($result);
+    } else {
+      echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+    }
+    mysqli_close($link);
+    ?>
+  var ctx = document.getElementById('myChart').getContext('2d');
+  var myChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+          labels: dateData,
+          datasets: [{
+              label: 'Daily Cases',
+              data: casesData,
+              borderColor: 'rgba(255, 99, 132, 1)',
+              pointBorderColor: 'rgba(255, 99, 132, 1)',
+              backgroundColor: 'rgba(255, 99, 132, 0.2)',
+              pointBackgroundColor: 'rgba(255, 99, 132, 0.2)',
+          },
+          {
+              label: 'Total Cases',
+              data: totalCasesData,
+              borderColor: 'rgba(54, 162, 235, 1)',
+              pointBorderColor: 'rgba(54, 162, 235, 1)',
+              backgroundColor: 'rgba(54, 162, 235, 0.2)',
+              pointBackgroundColor: 'rgba(54, 162, 235, 0.2)',
+          },
+        ]
+      },
+  });
+  </script>
+  </div>
+  </div>
+
   <!-- Covid Dashboard -->
   <div class="container-fluid padding">
     <div class="row justify-content-center">
@@ -80,7 +148,7 @@
         <table class="table table-striped table-bordered" id="data-table">
           <thead>
             <tr>
-              <th scope="col">Date (dd-mm-yyyy)</th>
+              <th scope="col">Date (yyyy-mm-dd)</th>
               <th scope="col">Active Cases</th>
             </tr>
           </thead>
@@ -95,7 +163,7 @@
               if (mysqli_num_rows($result) > 0) {
                 while ($row = mysqli_fetch_array($result)) {
                   $date_arr = explode("-", $row['date_range']);
-                  $date = ($date_arr[0] < 10 ? "0" . $date_arr[0] : $date_arr[0]) . "-" . ($date_arr[1] < 10 ? "0" . $date_arr[1] : $date_arr[1]) . "-" . $date_arr[2];
+                  $date = $date_arr[2] . "-" . ($date_arr[1] < 10 ? "0" . $date_arr[1] : $date_arr[1]) . "-" . ($date_arr[0] < 10 ? "0" . $date_arr[0] : $date_arr[0]);
                   echo "<tr>";
                   echo "<th scope='row'>" . $date . "</th>";
                   echo "<td>" . $row['cases'] . "</td>";
