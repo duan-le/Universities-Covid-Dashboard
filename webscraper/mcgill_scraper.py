@@ -27,7 +27,6 @@ for p in results[0].find_all('td'):
         row.append(p.get_text().strip())
         i += 1
     else:
-        sql = "INSERT INTO quebec (university_name, date_range, cases) VALUES (%s, %s, %s)"
         dateStringList =  row[0].split('-');
         dateStringList2 = dateStringList[0].split()
         dateString = ''
@@ -54,7 +53,8 @@ for p in results[0].find_all('td'):
         elif (dateStringList2[0] == 'Nov' or dateStringList2[0] == 'November'):
             dateString = dateStringList2[1] + '-11-2020'
         elif (dateStringList2[0] == 'Dec' or dateStringList2[0] == 'December'):
-            dateString = dateStringList2[1] + '-12-2020'    
+            dateString = dateStringList2[1] + '-12-2020'
+        sql = "INSERT INTO quebec (university_name, date_range, cases) VALUES (%s, %s, %s)"   
         val = ("McGill University", dateString, str(row[1]))
         try:
             mycursor.execute(sql, val)
