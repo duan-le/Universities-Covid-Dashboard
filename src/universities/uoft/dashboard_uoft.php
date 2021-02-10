@@ -94,6 +94,8 @@
             if ($result = mysqli_query($link, $sql)) {
               if (mysqli_num_rows($result) > 0) {
                 while ($row = mysqli_fetch_array($result)) {
+                  $date_arr = explode("-", $row['date_range']);
+                  $date = ($date_arr[0] < 10 ? "0" . $date_arr[0] : $date_arr[0]) . "-" . ($date_arr[1] < 10 ? "0" . $date_arr[1] : $date_arr[1]) . "-" . $date_arr[2];
                   echo "<tr>";
                   echo "<th scope='row'>" . $row['date_range'] . "</th>";
                   echo "<td>" . $row['cases'] . "</td>";
