@@ -76,8 +76,8 @@
   <!-- Covid Graph -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
   <div class="container-fluid padding">
-  <div class="chart-container">
-  <canvas id="myChart"></canvas>
+  <div class="chart-container" style="width: 80vw; margin: 0 auto;">
+  <canvas id="myChart" width="400" height="150"></canvas>
   <script>
     <?php
     $link = mysqli_connect("localhost", "root", "password", "university_covid");
@@ -116,6 +116,10 @@
   var ctx = document.getElementById('myChart').getContext('2d');
   var myChart = new Chart(ctx, {
       type: 'line',
+      options: {
+        responsive: true,
+        maintainAspectRation: false,
+      },
       data: {
           labels: dateData,
           datasets: [{
