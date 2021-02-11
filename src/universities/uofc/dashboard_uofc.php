@@ -9,8 +9,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-  <link rel="shortcut icon" href="../../assets/favicon/favicon-32x32.ico" />
-	<link rel="shortcut icon" href="../../assets/favicon/favicon-16x16.ico" />	
+  <link rel="shortcut icon" href="../../assets/favicon/favicon-32x32.png" />
+	<link rel="shortcut icon" href="../../assets/favicon/favicon-16x16.png" />	
   <link rel="stylesheet" href="../universities_style.css" />
 </head>
 
