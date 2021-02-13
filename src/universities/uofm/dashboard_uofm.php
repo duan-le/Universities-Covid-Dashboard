@@ -68,6 +68,22 @@
         <a href="https://umanitoba.ca/coronavirus" class="text-primary" target="_blank">University of Manitoba</a>
       </h3>
     </div>
+
+    <div class="financial-mental container-fluid text-center" style="margin-top: -1.25rem; margin-bottom: 3rem;">
+      <p>
+        For financial resources, University of Manitoba provides financial aid
+        and awards to students each year. Find out more
+        <a href="https://umanitoba.ca/financial-aid-and-awards" target="_blank">here.</a>
+      </p>
+
+      <p>
+        For mental health as well as general health and wellness, University of
+        Manitoba offers self-help resources, counselling and others. Find out
+        more
+        <a href="https://umanitoba.ca/student-supports/student-health-and-wellness" target="_blank">here.</a>
+      </p>
+    </div>
+
     <div class="dashboard text-center">
       <h3 class="display-4">Dashboard</h3>
     </div>
@@ -184,21 +200,6 @@
         </table>
       </div>
     </div>
-  </div>
-
-  <div class="financial-mental container-fluid text-center">
-    <p>
-      For financial resources, University of Manitoba provides financial aid
-      and awards to students each year. Find out more
-      <a href="https://umanitoba.ca/financial-aid-and-awards" target="_blank">here.</a>
-    </p>
-
-    <p>
-      For mental health as well as general health and wellness, University of
-      Manitoba offers self-help resources, counselling and others. Find out
-      more
-      <a href="https://umanitoba.ca/student-supports/student-health-and-wellness" target="_blank">here.</a>
-    </p>
   </div>
 
   <script src=https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js></script>

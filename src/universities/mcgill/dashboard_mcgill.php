@@ -68,6 +68,21 @@
         <a href="https://www.mcgill.ca/coronavirus/case-status" class="text-primary" target="_blank">McGill University</a>
       </h3>
     </div>
+
+    <div class="financial-mental container-fluid text-center" style="margin-top: -1.25rem; margin-bottom: 3rem;">
+      <p>
+        For financial resources, McGill University provides financial aid
+        and awards to students each year. Find out more
+        <a href="https://www.mcgill.ca/studentaid/faq/covid-19-faq#:~:text=Financial%20Aid%20Counselor-,1.,at%20514%2D398%2D6013." target="_blank">here.</a>
+      </p>
+
+      <p>
+        For mental health as well as general health and wellness, McGill University offers self-help resources, counselling and others. Find out
+        more
+        <a href="https://www.mcgill.ca/medicinefacdev/resources/resources-covid-hub/mental-health-and-wellbeing" target="_blank">here.</a>
+      </p>
+    </div>
+
     <div class="dashboard text-center">
       <h3 class="display-4">Dashboard</h3>
     </div>
@@ -184,20 +199,6 @@
         </table>
       </div>
     </div>
-  </div>
-
-  <div class="financial-mental container-fluid text-center">
-    <p>
-      For financial resources, McGill University provides financial aid
-      and awards to students each year. Find out more
-      <a href="https://www.mcgill.ca/studentaid/faq/covid-19-faq#:~:text=Financial%20Aid%20Counselor-,1.,at%20514%2D398%2D6013." target="_blank">here.</a>
-    </p>
-
-    <p>
-      For mental health as well as general health and wellness, McGill University offers self-help resources, counselling and others. Find out
-      more
-      <a href="https://www.mcgill.ca/medicinefacdev/resources/resources-covid-hub/mental-health-and-wellbeing" target="_blank">here.</a>
-    </p>
   </div>
 
   <script src=https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js></script>
