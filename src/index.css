@@ -29,19 +29,19 @@ body {
   height: 100%;
 }
 .carousel-caption {
-  position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-38%);
 }
 .carousel-caption h1 {
   font-size: 400%;
   text-transform: uppercase;
   text-shadow: 1px 1px 10px #000;
 }
-.carousel-caption h2 {
+.carousel-caption h2{
   font-size: 300%;
   text-shadow: 1px 1px 10px #000;
 }
+
 .carousel-caption h3 {
   font-size: 150%;
   font-weight: 500;
@@ -49,13 +49,28 @@ body {
   padding-bottom: 1rem;
 }
 .btn-primary {
-  background-color: #022d26;
-  border: 1px solid #022d26;
+  background-color: #2f4677;
+  border: 1px solid #2f4677;
 }
 .btn-primary:hover {
   background-color: #fff;
   border: 1px solid #fff;
   color: #022d26;
+}
+#uniButton {
+  background-color: #fff;
+  border: 1px solid #fff;
+  color: #022d26;
+  margin: 22px;
+}
+#uniButton:hover {
+  background-color: #2f4677;
+  border: 1px solid #2f4677;
+  color: white;
+}
+#bold {
+  font-size: 345%;
+  text-align: center;
 }
 
 /* General */
@@ -70,6 +85,10 @@ body {
 .welcome hr {
   border-top: 2px solid #b4b4b4;
   width: 95%;
+}
+
+#summary {
+  margin-bottom: 0.6em;
 }
 
 /* Footer */

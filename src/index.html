@@ -51,12 +51,49 @@
 
 <!--- Image Slider -->
 <div id="slides" class="carousel slide" data-ride="carousel">
+	<ul class="carousel-indicators">
+		<li data-target="#slides" data-slide-to="0" class="active"></li>
+		<li data-target="#slides" data-slide-to="1"></li>
+		<li data-target="#slides" data-slide-to="2"></li>
+		<li data-target="#slides" data-slide-to="3"></li>
+		<li data-target="#slides" data-slide-to="4"></li>
+	</ul>
 	<div class="carousel-inner">
 		<div class="carousel-item active">
 			<img src="assets/homepage/background.jpg">
 			<div class="carousel-caption">
 				<h1 class="display-2">Covid Overflow</h1>
 				<h3 > Covid-19 Statistics for Universities Across Canada </h3>
+				<!--<button type="button" class="btn btn-outline-light btn-lg">Find a University</button>-->
+				<!--<button type="button" class="btn btn-primary btn-lg">Find a University</button>-->
+			</div>
+		</div>
+		<div class="carousel-item">
+			<img src="assets/homepage/uoft.jpg">
+			<div class="carousel-caption">
+				<h2 class="display-2" id="bold">Covid-19 Statistics for the University of Toronto</h1>
+				<button type="button" onclick="location.href='./universities/uoft/dashboard_uoft.php'" class="btn btn-primary btn-lg" id="uniButton">Find out</button>
+			</div>
+		</div>
+		<div class="carousel-item">
+			<img src="assets/homepage/uofc.jpg">
+			<div class="carousel-caption">
+				<h2 class="display-2" id="bold">Covid-19 Statistics for the University of Calgary</h1>
+				<button type="button" onclick="location.href='./universities/uofc/dashboard_uofc.php'" class="btn btn-primary btn-lg" id="uniButton">Find out</button>
+			</div>
+		</div>
+		<div class="carousel-item">
+			<img src="assets/homepage/uofm.jpg">
+			<div class="carousel-caption">
+				<h2 class="display-2" id="bold">Covid-19 Statistics for the University of Manitoba</h1>
+				<button type="button" onclick="location.href='./universities/uofm/dashboard_uofm.php'" class="btn btn-primary btn-lg" id="uniButton">Find out</button>
+			</div>
+		</div>
+		<div class="carousel-item">
+			<img src="assets/homepage/mcgill.jpg">
+			<div class="carousel-caption">
+				<h2 class="display-2" id="bold">Covid-19 Statistics for McGill University</h1>
+				<button type="button" onclick="location.href='./universities/mcgill/dashboard_mcgill.php'" class="btn btn-primary btn-lg" id="uniButton">Find out</button>
 			</div>
 		</div>
 	</div>
