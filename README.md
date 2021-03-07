@@ -1,5 +1,5 @@
 # HackTogether2020 - COVID Overflow
-Check out the website [here](https://universities-covid-dashboard.herokuapp.com/).
+Check out the website [here](https://universities-covid-dashboard.herokuapp.com/).\
 Visit our Devpost [here](https://devpost.com/software/covid-overflow-oju456).
 
 ##  Inspiration
