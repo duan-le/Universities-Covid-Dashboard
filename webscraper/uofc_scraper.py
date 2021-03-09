@@ -39,29 +39,29 @@ for p in results:
             row[1] = row[1].strip().strip('.')
             dateStringList = row[0].split();
             dateString = ''
-            if (dateStringList[0] == 'Jan.' or dateStringList[0] == 'January'):
-                dateString = dateStringList[1] + '-1-2021'
-            elif (dateStringList[0] == 'Feb.' or dateStringList[0] == 'February'):
-                dateString = dateStringList[1] + '-2-2021'
-            elif (dateStringList[0] == 'Mar.' or dateStringList[0] == 'March'):
+            if (dateStringList[0].strip('.') in 'January'):
+                dateString = dateStringList[1] + '-1-2020'
+            elif (dateStringList[0].strip('.') in 'February'):
+                dateString = dateStringList[1] + '-2-2020'
+            elif (dateStringList[0].strip('.') in 'March'):
                 dateString = dateStringList[1] + '-3-2020'
-            elif (dateStringList[0] == 'Apr.' or dateStringList[0] == 'April'):
+            elif (dateStringList[0].strip('.') in 'April'):
                 dateString = dateStringList[1] + '-4-2020'
-            elif (dateStringList[0] == 'May.' or dateStringList[0] == 'May'):
+            elif (dateStringList[0].strip('.') in 'May'):
                 dateString = dateStringList[1] + '-5-2020'
-            elif (dateStringList[0] == 'Jun.' or dateStringList[0] == 'June'):
+            elif (dateStringList[0].strip('.') in 'June'):
                 dateString = dateStringList[1] + '-6-2020'
-            elif (dateStringList[0] == 'Jul.' or dateStringList[0] == 'July'):
+            elif (dateStringList[0].strip('.') in 'July'):
                 dateString = dateStringList[1] + '-7-2020'
-            elif (dateStringList[0] == 'Aug.' or dateStringList[0] == 'August'):
+            elif (dateStringList[0].strip('.') in 'August'):
                 dateString = dateStringList[1] + '-8-2020'
-            elif (dateStringList[0] == 'Sept.' or dateStringList[0] == 'September'):
+            elif (dateStringList[0].strip('.') in 'September'):
                 dateString = dateStringList[1] + '-9-2020'
-            elif (dateStringList[0] == 'Oct.' or dateStringList[0] == 'October'):
+            elif (dateStringList[0].strip('.') in 'October'):
                 dateString = dateStringList[1] + '-10-2020'
-            elif (dateStringList[0] == 'Nov.' or dateStringList[0] == 'November'):
+            elif (dateStringList[0].strip('.') in 'November'):
                 dateString = dateStringList[1] + '-11-2020'
-            elif (dateStringList[0] == 'Dec.' or dateStringList[0] == 'December'):
+            elif (dateStringList[0].strip('.') in 'December'):
                 dateString = dateStringList[1] + '-12-2020'
             sql = "INSERT INTO alberta (university_name, date_range, cases) VALUES (%s, %s, %s)"
             val = ("University of Calgary", dateString, str(1))
@@ -101,30 +101,30 @@ for p in results:
             row[1] = row[1].strip().strip('.')
             dateStringList = row[0].split();
             dateString = ''
-            if (dateStringList[0] == 'Jan.' or dateStringList[0] == 'January'):
+            if (dateStringList[0].strip('.') in 'January'):
                 dateString = dateStringList[1] + '-1-2021'
-            elif (dateStringList[0] == 'Feb.' or dateStringList[0] == 'February'):
+            elif (dateStringList[0].strip('.') in 'February'):
                 dateString = dateStringList[1] + '-2-2021'
-            elif (dateStringList[0] == 'Mar.' or dateStringList[0] == 'March'):
-                dateString = dateStringList[1] + '-3-2020'
-            elif (dateStringList[0] == 'Apr.' or dateStringList[0] == 'April'):
-                dateString = dateStringList[1] + '-4-2020'
-            elif (dateStringList[0] == 'May.' or dateStringList[0] == 'May'):
-                dateString = dateStringList[1] + '-5-2020'
-            elif (dateStringList[0] == 'Jun.' or dateStringList[0] == 'June'):
-                dateString = dateStringList[1] + '-6-2020'
-            elif (dateStringList[0] == 'Jul.' or dateStringList[0] == 'July'):
-                dateString = dateStringList[1] + '-7-2020'
-            elif (dateStringList[0] == 'Aug.' or dateStringList[0] == 'August'):
-                dateString = dateStringList[1] + '-8-2020'
-            elif (dateStringList[0] == 'Sep.' or dateStringList[0] == 'September'):
-                dateString = dateStringList[1] + '-9-2020'
-            elif (dateStringList[0] == 'Oct.' or dateStringList[0] == 'October'):
-                dateString = dateStringList[1] + '-10-2020'
-            elif (dateStringList[0] == 'Nov.' or dateStringList[0] == 'November'):
-                dateString = dateStringList[1] + '-11-2020'
-            elif (dateStringList[0] == 'Dec.' or dateStringList[0] == 'December'):
-                dateString = dateStringList[1] + '-12-2020'
+            elif (dateStringList[0].strip('.') in 'March'):
+                dateString = dateStringList[1] + '-3-2021'
+            elif (dateStringList[0].strip('.') in 'April'):
+                dateString = dateStringList[1] + '-4-2021'
+            elif (dateStringList[0].strip('.') in 'May'):
+                dateString = dateStringList[1] + '-5-2021'
+            elif (dateStringList[0].strip('.') in 'June'):
+                dateString = dateStringList[1] + '-6-2021'
+            elif (dateStringList[0].strip('.') in 'July'):
+                dateString = dateStringList[1] + '-7-2021'
+            elif (dateStringList[0].strip('.') in 'August'):
+                dateString = dateStringList[1] + '-8-2021'
+            elif (dateStringList[0].strip('.') in 'September'):
+                dateString = dateStringList[1] + '-9-2021'
+            elif (dateStringList[0].strip('.') in 'October'):
+                dateString = dateStringList[1] + '-10-2021'
+            elif (dateStringList[0].strip('.') in 'November'):
+                dateString = dateStringList[1] + '-11-2021'
+            elif (dateStringList[0].strip('.') in 'December'):
+                dateString = dateStringList[1] + '-12-2021'
             sql = "INSERT INTO alberta (university_name, date_range, cases) VALUES (%s, %s, %s)"
             val = ("University of Calgary", dateString, str(1))
             try:
