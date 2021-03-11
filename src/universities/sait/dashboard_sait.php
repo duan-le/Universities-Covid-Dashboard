@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>McGill University</title>
+  <title>SAIT</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
@@ -34,9 +34,9 @@
               Universities
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="./dashboard_mcgill.php">McGill University</a>
-            <a class="dropdown-item" href="../sait/dashboard_sait.php">SAIT</a>
-						<a class="dropdown-item" href="../uofc/dashboard_uofc.php">University of Calgary</a>
+            <a class="dropdown-item" href="../mcgill/dashboard_mcgill.php">McGill University</a>
+						<a class="dropdown-item" href="./dashboard_sait.php">SAIT</a>
+            <a class="dropdown-item" href="../uofc/dashboard_uofc.php">University of Calgary</a>
 						<a class="dropdown-item" href="../uofm/dashboard_uofm.php">University of Manitoba</a>
             <a class="dropdown-item" href="../uoft/dashboard_uoft.php">University of Toronto</a>
             </div>
@@ -53,9 +53,9 @@
   <div class="container-fluid padding">
     <div class="welcome text-left">
       <div class="col-0" style="display: flex; align-items: flex-end">
-        <img class="img-fluid" style="float: left" src="logo_mcgill.png" alt="mcgill logo" />
+        <img class="img-fluid" style="float: left" src="logo_sait.png" alt="sait logo" />
         <h1 class="display-4">
-          <strong>McGill University</strong>
+          <strong>Southern Alberta Institute of Technology</strong>
         </h1>
       </div>
       <hr />
@@ -66,21 +66,22 @@
     <div class="whatshappening text-center">
       <h3 class="display-5">
         Here's what's happening in
-        <a href="https://www.mcgill.ca/coronavirus/case-status" class="text-primary" target="_blank">McGill University</a>
+        <a href="https://www.sait.ca/about-sait/administration/departments/health-safety-and-environment-services/pandemic-response" class="text-primary" target="_blank">Southern Alberta Institute of Technology</a>
       </h3>
     </div>
 
     <div class="financial-mental container-fluid text-center" style="margin-top: -1.25rem; margin-bottom: 3rem;">
       <p>
-        For financial resources, McGill University provides financial aid
+        For financial resources, Southern Alberta Institute of Technology provides financial aid
         and awards to students each year. Find out more
-        <a href="https://www.mcgill.ca/studentaid/faq/covid-19-faq#:~:text=Financial%20Aid%20Counselor-,1.,at%20514%2D398%2D6013." target="_blank">here.</a>
+        <a href="https://www.sait.ca/admissions/tuition-and-financial-aid" target="_blank">here.</a>
       </p>
 
       <p>
-        For mental health as well as general health and wellness, McGill University offers self-help resources, counselling and others. Find out
+        For mental health as well as general health and wellness, Southern Alberta Institute of Technology
+        offers self-help resources, counselling and others. Find out
         more
-        <a href="https://www.mcgill.ca/medicinefacdev/resources/resources-covid-hub/mental-health-and-wellbeing" target="_blank">here.</a>
+        <a href="https://www.sait.ca/student-life/health-wellness-and-safety/student-development-and-counselling" target="_blank">here.</a>
       </p>
     </div>
 
@@ -108,7 +109,7 @@
     if ($link === false) {
       die("ERROR: Could not connect. " . mysqli_connect_error());
     }
-    $sql = "SELECT * FROM quebec WHERE university_name = 'McGill University' AND cases != 0 ORDER BY STR_TO_DATE(date_range, '%e-%c-%Y') ASC";
+    $sql = "SELECT * FROM alberta WHERE university_name = 'Southern Alberta Institute of Technology' AND cases != 0 ORDER BY STR_TO_DATE(date_range, '%e-%c-%Y') ASC";
     $casesData = array();
     $totalCasesData = array();
     $dateData = array();
@@ -194,7 +195,7 @@
             if ($link === false) {
               die("ERROR: Could not connect. " . mysqli_connect_error());
             }
-            $sql = "SELECT * FROM quebec WHERE university_name = 'McGill University' AND cases != 0 ORDER BY STR_TO_DATE(date_range, '%e-%c-%Y') DESC";
+            $sql = "SELECT * FROM alberta WHERE university_name = 'Southern Alberta Institute of Technology' AND cases != 0 ORDER BY STR_TO_DATE(date_range, '%e-%c-%Y') DESC";
             if ($result = mysqli_query($link, $sql)) {
               if (mysqli_num_rows($result) > 0) {
                 while ($row = mysqli_fetch_array($result)) {

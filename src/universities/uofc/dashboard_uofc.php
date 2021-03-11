@@ -35,6 +35,7 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="../mcgill/dashboard_mcgill.php">McGill University</a>
+            <a class="dropdown-item" href="../sait/dashboard_sait.php">SAIT</a>
 						<a class="dropdown-item" href="./dashboard_uofc.php">University of Calgary</a>
 						<a class="dropdown-item" href="../uofm/dashboard_uofm.php">University of Manitoba</a>
             <a class="dropdown-item" href="../uoft/dashboard_uoft.php">University of Toronto</a>
@@ -96,7 +97,15 @@
   <canvas id="myChart" width="400" height="150"></canvas>
   <script>
     <?php
-    $link = mysqli_connect("localhost", "root", "password", "university_covid");
+    //Get Heroku ClearDB connection information
+    $cleardb_url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+    $cleardb_server = $cleardb_url["host"];
+    $cleardb_username = $cleardb_url["user"];
+    $cleardb_password = $cleardb_url["pass"];
+    $cleardb_db = substr($cleardb_url["path"],1);
+    $active_group = 'default';
+    $query_builder = TRUE;
+    $link = mysqli_connect($cleardb_server, $cleardb_username, $cleardb_password, $cleardb_db);
     if ($link === false) {
       die("ERROR: Could not connect. " . mysqli_connect_error());
     }
@@ -174,7 +183,15 @@
           </thead>
           <tbody>
             <?php
-            $link = mysqli_connect("localhost", "root", "password", "university_covid");
+            //Get Heroku ClearDB connection information
+            $cleardb_url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+            $cleardb_server = $cleardb_url["host"];
+            $cleardb_username = $cleardb_url["user"];
+            $cleardb_password = $cleardb_url["pass"];
+            $cleardb_db = substr($cleardb_url["path"],1);
+            $active_group = 'default';
+            $query_builder = TRUE;
+            $link = mysqli_connect($cleardb_server, $cleardb_username, $cleardb_password, $cleardb_db);
             if ($link === false) {
               die("ERROR: Could not connect. " . mysqli_connect_error());
             }
