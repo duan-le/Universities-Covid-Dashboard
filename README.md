@@ -1,4 +1,4 @@
-# HackTogether 2020 - COVID Overflow
+# HackTogether 2020 - COVID Overflow (First Place Winner in Technical Solutions :1st_place_medal:)
 * Check out the [website](https://universities-covid-dashboard.herokuapp.com/)
 * Visit our [Devpost](https://devpost.com/software/covid-overflow-oju456)
 
